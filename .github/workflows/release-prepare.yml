@@ -1,0 +1,34 @@
+name: release-prepare
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check branch
+        if: ${{ github.ref != 'refs/heads/main' }}
+        run: echo "This action can only be run on the main branch." && exit 1
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          show-progress: false
+      - name: Configure git
+        run: |
+          git config --global --add safe.directory ${{github.workspace}}
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+          git config pull.rebase false
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '8'
+          cache: maven
+      - name: Prepare release
+        run: |
+          mvn release:prepare --batch-mode -DskipTests
+          git log --pretty="format:%ce: %s" -3
+          git push origin main --tags
