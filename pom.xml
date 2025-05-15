@@ -16,13 +16,12 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.czudf</groupId>
     <artifactId>czudf-java-toolkit</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.1.0</version>
     <packaging>pom</packaging>
     <modules>
         <module>czudf-hive-toolkit</module>
@@ -57,14 +56,14 @@
         <connection>scm:git:git://github.com/czudf/czudf-java-toolkit.git</connection>
         <developerConnection>scm:git:ssh://github.com/czudf/czudf-java-toolkit.git</developerConnection>
         <url>https://github.com/czudf/czudf-java-toolkit/tree/main</url>
-        <tag>HEAD</tag>
+        <tag>v1.1.0</tag>
     </scm>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.outputTimestamp>2025-05-15T04:19:03Z</project.build.outputTimestamp>
+        <project.build.outputTimestamp>2025-05-15T10:07:33Z</project.build.outputTimestamp>
     </properties>
 
     <build>
