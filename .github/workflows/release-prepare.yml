@@ -3,11 +3,12 @@ name: release-prepare
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   prepare:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Check branch
         if: ${{ github.ref != 'refs/heads/main' }}
@@ -29,6 +30,6 @@ jobs:
           cache: maven
       - name: Prepare release
         run: |
-          mvn release:prepare --batch-mode -DskipTests
+          mvn release:prepare -Pprepare --batch-mode -DskipTests
           git log --pretty="format:%ce: %s" -3
           git push origin main --tags
