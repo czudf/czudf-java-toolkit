@@ -20,4 +20,9 @@ import org.apache.hadoop.hive.ql.metadata.HiveException;
 
 public interface BatchEvaluatable {
   List<Object> evaluate(List<Object[]> arguments) throws HiveException;
+
+  // Maximum batch size for evaluation; 0 or less means no limit.
+  default int getMaxBatchSize() {
+    return 0;
+  }
 }
