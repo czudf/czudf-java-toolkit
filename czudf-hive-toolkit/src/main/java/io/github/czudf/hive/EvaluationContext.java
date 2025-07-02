@@ -15,16 +15,6 @@
  */
 package io.github.czudf.hive;
 
-import java.util.List;
-import org.apache.hadoop.hive.ql.metadata.HiveException;
-
-public interface BatchEvaluatable {
-  List<Object> evaluate(List<Object[]> arguments) throws HiveException;
-
-  // Maximum batch size for evaluation; 0 or less means no limit.
-  default int getMaxBatchSize() {
-    return 0;
-  }
-
-  default void setEvaluationContext(EvaluationContext context) {}
+public interface EvaluationContext {
+  boolean isTerminated();
 }
