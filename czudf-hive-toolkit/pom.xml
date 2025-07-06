@@ -25,6 +25,7 @@
     </parent>
 
     <artifactId>czudf-hive-toolkit</artifactId>
+    <name>${project.groupId}:${project.artifactId}</name>
 
     <dependencies>
         <dependency>
