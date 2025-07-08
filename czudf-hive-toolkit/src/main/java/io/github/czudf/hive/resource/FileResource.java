@@ -17,11 +17,15 @@ package io.github.czudf.hive.resource;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Instant;
 
 public interface FileResource extends Resource {
   long getFileSize() throws IOException;
 
   InputStream open() throws IOException;
+
+  /** Returns the last modified time of the local copy of the file resource. */
+  Instant getLastModifiedTime() throws IOException;
 
   @Override
   default ResourceType getType() {
