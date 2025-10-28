@@ -28,7 +28,14 @@ public interface CredentialsResource extends Resource {
    */
   byte[] toByteArray();
 
-  default ResourceType getResourceType() {
+  @Override
+  default ResourceType getType() {
     return ResourceType.CREDENTIALS;
+  }
+
+  /** @deprecated Use {@link #getType()} instead. */
+  @Deprecated
+  default ResourceType getResourceType() {
+    return getType();
   }
 }
