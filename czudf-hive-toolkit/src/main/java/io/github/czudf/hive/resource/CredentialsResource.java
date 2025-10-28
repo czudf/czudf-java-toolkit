@@ -18,11 +18,10 @@ package io.github.czudf.hive.resource;
 public interface CredentialsResource extends Resource {
   /**
    * Serializes this credentials resource to a byte array.
-   * <p>
-   * The returned byte array typically represents the serialized form of the credentials,
-   * such as a protocol buffer, JSON, or other implementation-defined format.
-   * The encoding and structure of the byte array depend on the specific implementation.
-   * </p>
+   *
+   * <p>The returned byte array typically represents the serialized form of the credentials, such as
+   * a protocol buffer, JSON, or other implementation-defined format. The encoding and structure of
+   * the byte array depend on the specific implementation.
    *
    * @return a byte array representing the serialized credentials resource
    * @throws RuntimeException if serialization fails (implementation-dependent)
