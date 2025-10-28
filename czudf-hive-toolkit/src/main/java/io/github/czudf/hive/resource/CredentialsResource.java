@@ -33,10 +33,8 @@ public interface CredentialsResource extends Resource {
     return ResourceType.CREDENTIALS;
   }
 
-  /**
-   * @deprecated Use {@link #getType()} instead.
-   */
-  @Deprecated(since = "1.0", forRemoval = true)
+  /** @deprecated Use {@link #getType()} instead. */
+  @Deprecated
   default ResourceType getResourceType() {
     return ResourceType.CREDENTIALS;
   }
