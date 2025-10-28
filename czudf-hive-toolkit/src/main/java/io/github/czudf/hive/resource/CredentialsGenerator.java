@@ -15,7 +15,18 @@
  */
 package io.github.czudf.hive.resource;
 
-public enum ResourceType {
-  FILE,
-  CREDENTIALS,
+import java.util.List;
+import java.util.Map;
+import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector;
+
+public interface CredentialsGenerator {
+  CredentialsResource generate(CredentialsGenerationContext context);
+
+  interface CredentialsGenerationContext {
+    String getJobId();
+
+    Map<String, String> getConfiguration();
+
+    List<ObjectInspector> getArguments();
+  }
 }

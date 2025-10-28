@@ -15,7 +15,10 @@
  */
 package io.github.czudf.hive.resource;
 
-public enum ResourceType {
-  FILE,
-  CREDENTIALS,
+public interface CredentialsResource extends Resource {
+  byte[] toByteArray();
+
+  default ResourceType getResourceType() {
+    return ResourceType.CREDENTIALS;
+  }
 }
